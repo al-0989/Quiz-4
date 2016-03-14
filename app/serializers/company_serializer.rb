@@ -1,3 +1,6 @@
 class CompanySerializer < ActiveModel::Serializer
-  attributes :id, :name, :products
+  attributes :id, :name
+
+  has_many :products
+
 end
