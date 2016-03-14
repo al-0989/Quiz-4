@@ -21,4 +21,15 @@ $(document).ready(function(){
       });
     } // Closing success bracket
   }); // End of Ajax request
+
+  $("#companies").on("click", "i.fa.fa-thumbs-o-up", function(){
+    console.log("clicky");
+    if ($(this).data('count')) { // already been clicked
+            $(this).data('count', $(this).data('count') + 1); // add one
+        } else { // first click
+            $(this).data('count', 1); // initialize the count
+        }
+        $(this).html(" (" + $(this).data('count') +") "); // show it
+  }); // End of likes
+
 }); // End of document ready

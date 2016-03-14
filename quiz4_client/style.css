@@ -6,11 +6,11 @@ h1 {
   padding-bottom: 10px;
 }
 
-/*#companies{
-  opacity: 0;
-  transition: opacity 5s;
+h2{
+  display: inline-block;
+  padding-right: 10px;
 }
 
-#companies.appear{
-  opacity: 1;
-}*/
+a, a:link {
+  color: black;
+}
