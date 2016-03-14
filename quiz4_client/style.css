@@ -5,3 +5,12 @@ body{
 h1 {
   padding-bottom: 10px;
 }
+
+/*#companies{
+  opacity: 0;
+  transition: opacity 5s;
+}
+
+#companies.appear{
+  opacity: 1;
+}*/

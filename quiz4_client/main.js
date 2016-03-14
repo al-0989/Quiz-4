@@ -9,14 +9,16 @@ $(document).ready(function(){
     success: function(data){
       var companies = data.companies;
       $("#companies").html("");
-      for(var i = 0; i < companies.length ; i++){
+      for(var i = 0; i < companies.length; i++){
         var template = $("#all-companies").html();
-        console.log(companies[i]);
-        console.log(companies[i].products);
         var renderedHtml = Mustache.render(template, companies[i]);
-        $("#comapanies").append(renderedHtml);
+        $("#companies").append(renderedHtml);
       }
-        // $("#courses").fadeIn(1000); // FadeIn using jQuery fadeIn method
-      }
-    }); // End of Ajax request
+      // hide each div then iterate through and show them.
+      $("#companies div").hide().each(function(i){
+        console.log("fading in: " + $(this));
+        $(this).delay(i*500).fadeIn(500);
+      });
+    } // Closing success bracket
+  }); // End of Ajax request
 }); // End of document ready

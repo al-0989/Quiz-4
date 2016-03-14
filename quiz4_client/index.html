@@ -15,10 +15,10 @@
     <h1>Quiz 4!</h1>
 
     <script id="all-companies" type="x-tmpl-mustache">
+      <div>
       <h2>{{ name }}</h2>
-      <ul>{{#products}}
-        <li>{{.}}</li>
-      {{/products}}</ul>
+      <span><strong>Products:   </strong></span>{{#products}}{{.}}, {{/products}}
+      </div>
     </script>
 
     <div id="companies">Companies are loading...</div>
