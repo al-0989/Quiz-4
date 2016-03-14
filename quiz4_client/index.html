@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quiz 4 Client</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="mustache.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <h1>Quiz 4!</h1>
+
+    <script id="all-companies" type="x-tmpl-mustache">
+      <h2>{{ name }}</h2>
+      <ul>{{#products}}
+        <li>{{.}}</li>
+      {{/products}}</ul>
+    </script>
+
+    <div id="companies">Companies are loading...</div>
+
+  </body>
+</html>
