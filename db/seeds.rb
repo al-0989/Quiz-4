@@ -9,7 +9,12 @@
 # Company.create(name: "Apple", products:["iMac", "iPhone", "iPad"])
 # Company.create(name: "Toyota", products:["Corolla", "Matrix", "Rav4"])
 
+# 10.times do
+#   arr = ["Chapter 1", "Ruby", "Hockey", "Pizza", "JS", "Chapter 2", "Chapter 3", "Pugs", "Bananas", "Chapter 3", "iMac", "Cheese", "Coffee", ]
+#   Company.create(name: Faker::Company.bs, products: arr.sample(3))
+# end
+
 10.times do
-  arr = ["Chapter 1", "Ruby", "Hockey", "Pizza", "JS", "Chapter 2", "Chapter 3", "Pugs", "Bananas", "Chapter 3", "iMac", "Cheese", "Coffee", ]
-  Company.create(name: Faker::Company.bs, products: arr.sample(3))
+  arr = ["Chapter 1", "Ruby", "Hockey", "Pizza", "JS", "Chapter 2", "Chapter 3", "Pugs", "Bananas", "Chapter 3", "iMac", "Cheese", "Coffee", ].sample(1)
+  Product.create( item: arr[0] )
 end

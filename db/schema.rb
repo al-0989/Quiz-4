@@ -11,26 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314202649) do
+ActiveRecord::Schema.define(version: 20160315012718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.text     "products",   default: [],              array: true
-    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_index "companies", ["product_id"], name: "index_companies_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "item"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "company_id"
   end
 
-  add_foreign_key "companies", "products"
+  add_index "products", ["company_id"], name: "index_products_on_company_id", using: :btree
+
+  add_foreign_key "products", "companies"
 end

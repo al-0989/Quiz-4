@@ -1,6 +1,11 @@
 class CompanySerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :products
 
-  has_many :products
+  def products
+    object.products.map(&:item)
 
+    # object.products.map { |x|
+    #   x.item
+    # }
+  end
 end
